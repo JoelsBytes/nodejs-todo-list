@@ -6,6 +6,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+const port = process.env.PORT || 4000;
+
 app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -62,7 +64,11 @@ app.delete('/delete/todo/:id', (req, res) => {
 //   console.log(`server is running on http://localhost:${PORT}`);
 // });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`); // It's good practice to log the actual port
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`); // It's good practice to log the actual port
+// });
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
 });

@@ -33,7 +33,7 @@ todoForm.addEventListener('submit', async function (e) {
 // Fetch all todos
 async function fetchTodos() {
   try {
-    const response = await fetch('/todos');
+    const response = await fetch('/get/todo');
     const todos = await response.json();
 
     todoList.innerHTML = '';
